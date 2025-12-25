@@ -234,33 +234,37 @@
             color: #a3e635;
         }
 
-        /* Mobile & Tablet Responsive Improvements */
+        /* Mobile & Tablet Responsive Improvements - Premium Mobile Experience */
         @media (max-width: 768px) {
             /* Show hamburger on mobile */
             .hamburger {
                 display: flex;
             }
             
-            /* Reduce hero font size for mobile */
+            /* Beautiful mobile hero typography */
             .headline-hero {
-                font-size: clamp(2.5rem, 10vw, 4rem) !important;
-                line-height: 0.95 !important;
+                font-size: clamp(2.75rem, 11vw, 4.5rem) !important;
+                line-height: 1.05 !important;
+                letter-spacing: -0.02em !important;
+                margin-bottom: 1.5rem !important;
             }
             
             .headline-section {
-                font-size: clamp(1.75rem, 6vw, 3rem) !important;
-                line-height: 1 !important;
+                font-size: clamp(2rem, 7vw, 3.25rem) !important;
+                line-height: 1.15 !important;
+                letter-spacing: -0.02em !important;
+                margin-bottom: 1.25rem !important;
             }
             
-            /* Better mobile navigation */
+            /* Premium mobile navigation */
             .adaptive-nav {
-                top: 0.75rem;
-                padding: 0 0.75rem;
+                top: 0.5rem;
+                padding: 0 1rem;
             }
             
             nav .backdrop-blur-md {
-                padding: 0.75rem 1rem;
-                gap: 0.5rem;
+                padding: 1rem 1.25rem;
+                gap: 0.75rem;
                 width: 100%;
                 max-width: 100%;
             }
@@ -270,67 +274,92 @@
                 display: none !important;
             }
             
-            /* Mobile-friendly service cards */
+            /* Beautiful mobile service cards */
             .service-card {
                 min-height: auto !important;
-                padding: 1.5rem !important;
+                padding: 2rem 1.5rem !important;
+                margin-bottom: 1rem !important;
+                background: rgba(24, 24, 27, 0.6) !important;
+                border-radius: 1rem !important;
             }
             
-            /* Better mobile spacing */
+            /* Generous mobile spacing for readability */
             section {
-                padding-top: 3rem !important;
-                padding-bottom: 3rem !important;
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
             }
             
             /* Fix hero section mobile */
             .min-h-screen {
                 min-height: 100vh;
                 min-height: 100dvh;
+                padding-bottom: 4rem !important;
             }
             
-            /* Mobile typography adjustments */
+            /* Premium mobile typography with perfect readability */
+            .text-base {
+                font-size: 0.9375rem !important;
+                line-height: 1.7 !important;
+                letter-spacing: 0.01em !important;
+            }
+            
+            .text-lg {
+                font-size: 1.0625rem !important;
+                line-height: 1.65 !important;
+                letter-spacing: 0.005em !important;
+            }
+            
             .text-xl {
-                font-size: 1.125rem !important;
-                line-height: 1.5 !important;
+                font-size: 1.1875rem !important;
+                line-height: 1.6 !important;
+                letter-spacing: 0 !important;
             }
             
             .text-2xl {
-                font-size: 1.25rem !important;
-                line-height: 1.4 !important;
+                font-size: 1.375rem !important;
+                line-height: 1.5 !important;
+                letter-spacing: -0.01em !important;
             }
             
             .text-3xl {
-                font-size: 1.5rem !important;
-                line-height: 1.3 !important;
+                font-size: 1.625rem !important;
+                line-height: 1.4 !important;
+                letter-spacing: -0.015em !important;
             }
             
             .text-4xl {
-                font-size: 1.75rem !important;
-                line-height: 1.2 !important;
+                font-size: 1.875rem !important;
+                line-height: 1.3 !important;
+                letter-spacing: -0.02em !important;
             }
             
             .text-5xl {
-                font-size: 2rem !important;
-                line-height: 1.1 !important;
+                font-size: 2.125rem !important;
+                line-height: 1.25 !important;
+                letter-spacing: -0.02em !important;
             }
             
-            /* Mobile list items */
+            /* Beautiful mobile list items */
             ul li {
-                font-size: 0.875rem !important;
-                line-height: 1.6 !important;
+                font-size: 0.9375rem !important;
+                line-height: 1.75 !important;
+                margin-bottom: 0.75rem !important;
+                letter-spacing: 0.01em !important;
             }
             
-            /* Better mobile buttons */
+            /* Premium mobile buttons */
             .cta-premium {
-                padding: 0.875rem 1.25rem !important;
-                font-size: 0.75rem !important;
+                padding: 1rem 1.5rem !important;
+                font-size: 0.8125rem !important;
                 width: 100%;
                 text-align: center;
+                letter-spacing: 0.05em !important;
+                font-weight: 600 !important;
             }
             
             /* Mobile grid improvements */
             .grid {
-                gap: 1rem !important;
+                gap: 1.5rem !important;
             }
             
             /* Fix grid columns on mobile */
@@ -342,8 +371,6 @@
             
             /* Reduce blob effects on mobile */
             .blob {
-                filter: blur(40px);
-                opacity: 0.08;
                 display: none;
             }
             
@@ -352,24 +379,28 @@
                 position: relative !important;
             }
             
-            /* Better mobile padding */
+            /* Generous mobile padding for premium feel */
             .px-6 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
             }
             
             .px-12 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
             }
             
             /* Mobile gap adjustments */
             .gap-12 {
-                gap: 2rem !important;
+                gap: 2.5rem !important;
             }
             
             .gap-16 {
-                gap: 2rem !important;
+                gap: 2.5rem !important;
+            }
+            
+            .gap-8 {
+                gap: 1.5rem !important;
             }
             
             /* Fix border padding on mobile */
@@ -378,83 +409,160 @@
                 padding-left: 0 !important;
             }
             
+            .border-l-2 {
+                border-left-width: 3px !important;
+                padding-left: 1.25rem !important;
+            }
+            
             .pl-6,
             .pl-8,
             .pl-12 {
-                padding-left: 1rem !important;
+                padding-left: 1.25rem !important;
+            }
+            
+            /* Better mobile paragraph spacing */
+            p {
+                margin-bottom: 1.25rem !important;
+            }
+            
+            p:last-child {
+                margin-bottom: 0 !important;
+            }
+            
+            /* Mobile heading improvements */
+            h1, h2, h3, h4, h5, h6 {
+                margin-bottom: 1rem !important;
+            }
+            
+            /* Mobile section improvements */
+            .max-w-3xl,
+            .max-w-4xl {
+                max-width: 100% !important;
             }
         }
         
         @media (max-width: 640px) {
-            /* Extra small mobile adjustments */
+            /* Premium small mobile typography */
             .headline-hero {
-                font-size: clamp(2rem, 9vw, 3.5rem) !important;
-                line-height: 1 !important;
+                font-size: clamp(2.25rem, 9.5vw, 3.75rem) !important;
+                line-height: 1.1 !important;
+                letter-spacing: -0.025em !important;
+                margin-bottom: 1.25rem !important;
             }
             
             .headline-section {
-                font-size: clamp(1.5rem, 5vw, 2.25rem) !important;
-                line-height: 1.1 !important;
+                font-size: clamp(1.625rem, 5.5vw, 2.5rem) !important;
+                line-height: 1.2 !important;
+                letter-spacing: -0.02em !important;
+                margin-bottom: 1rem !important;
             }
             
-            /* Tighter mobile spacing */
+            /* Comfortable mobile spacing */
             .px-6 {
-                padding-left: 0.875rem !important;
-                padding-right: 0.875rem !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
             }
             
             .py-32 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .py-24 {
                 padding-top: 2.5rem !important;
                 padding-bottom: 2.5rem !important;
             }
             
-            .py-24 {
+            .py-16 {
                 padding-top: 2rem !important;
                 padding-bottom: 2rem !important;
             }
             
-            .py-16 {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-            }
-            
-            /* Service card mobile optimization */
+            /* Beautiful service cards on small mobile */
             .service-card {
                 min-height: auto !important;
-                padding: 1.25rem !important;
+                padding: 1.75rem 1.25rem !important;
+                margin-bottom: 1rem !important;
+                border-radius: 0.875rem !important;
             }
             
             /* Mobile form improvements */
             input, textarea, select {
                 font-size: 16px !important;
-                padding: 0.875rem !important;
+                padding: 1rem !important;
+                line-height: 1.5 !important;
             }
             
-            /* Extra small text adjustments */
+            /* Perfect small mobile text sizes */
             .text-base {
-                font-size: 0.875rem !important;
+                font-size: 0.9375rem !important;
+                line-height: 1.7 !important;
             }
             
             .text-lg {
-                font-size: 1rem !important;
+                font-size: 1.0625rem !important;
+                line-height: 1.65 !important;
+            }
+            
+            .text-sm {
+                font-size: 0.875rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            .text-xs {
+                font-size: 0.8125rem !important;
+                line-height: 1.5 !important;
             }
             
             /* Mobile button full width */
             button, .cta-premium {
                 width: 100%;
+                padding: 1.125rem 1.5rem !important;
+                font-size: 0.875rem !important;
             }
             
-            /* Fix mobile margins */
+            /* Fix mobile margins for better flow */
             .mb-8 {
-                margin-bottom: 1.5rem !important;
+                margin-bottom: 1.75rem !important;
             }
             
             .mb-6 {
+                margin-bottom: 1.25rem !important;
+            }
+            
+            .mb-4 {
                 margin-bottom: 1rem !important;
             }
             
+            .mb-3 {
+                margin-bottom: 0.875rem !important;
+            }
+            
             .mt-16 {
-                margin-top: 2rem !important;
+                margin-top: 2.5rem !important;
+            }
+            
+            .mt-12 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .mt-8 {
+                margin-top: 1.75rem !important;
+            }
+            
+            /* Better mobile list spacing */
+            ul, ol {
+                padding-left: 1.25rem !important;
+            }
+            
+            ul li {
+                margin-bottom: 0.875rem !important;
+            }
+            
+            /* Mobile section title spacing */
+            h2 + p,
+            h3 + p {
+                margin-top: 0.75rem !important;
             }
         }
         
