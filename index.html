@@ -27,6 +27,14 @@
         ::-webkit-scrollbar-track { background: #09090b; }
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+        
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: clamp(2.5rem, 10vw, 4rem) !important; }
+            h2 { font-size: clamp(1.75rem, 6vw, 2.5rem) !important; }
+            h3 { font-size: clamp(1.25rem, 4vw, 1.75rem) !important; }
+        }
 
         /* Custom Utilities */
         .text-outline {
@@ -103,7 +111,22 @@
 
         /* Premium Micro-interactions */
         .service-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Mobile touch optimization */
+        @media (max-width: 768px) {
+            .service-card {
+                min-height: 280px !important;
+            }
+            /* Larger touch targets for mobile */
+            a, button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+
+        .service-card {
             position: relative;
             overflow: hidden;
         }
@@ -143,15 +166,25 @@
 
         /* Enhanced Typography Rhythm */
         .headline-hero {
-            font-size: clamp(4rem, 15vw, 12rem);
-            line-height: 0.85;
-            letter-spacing: -0.04em;
+            font-size: clamp(3rem, 12vw, 10rem);
+            line-height: 0.95;
         }
         
         .headline-section {
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 0.9;
-            letter-spacing: -0.03em;
+            font-size: clamp(2rem, 6vw, 5rem);
+            line-height: 1.15;
+        }
+        
+        /* Mobile typography adjustments */
+        @media (max-width: 640px) {
+            .headline-hero {
+                font-size: clamp(2.5rem, 15vw, 4rem);
+                line-height: 1;
+            }
+            .headline-section {
+                font-size: clamp(1.75rem, 8vw, 3rem);
+                line-height: 1.2;
+            }
         }
 
         /* Refined Hover States */
@@ -187,6 +220,23 @@
             width: 300px;
             height: 300px;
         }
+        
+        .cta-premium {
+            box-shadow: 0 4px 20px rgba(163, 230, 53, 0.15);
+        }
+        
+        .cta-premium:hover {
+            box-shadow: 0 8px 30px rgba(163, 230, 53, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile CTA optimization */
+        @media (max-width: 640px) {
+            .cta-premium {
+                padding: 1rem 2rem !important;
+                font-size: 0.75rem !important;
+            }
+        }
     </style>
 </head>
 <body class="relative overflow-x-hidden bg-zinc-950">
@@ -195,9 +245,9 @@
     <div class="noise-bg"></div>
 
     <!-- Intelligent Adaptive Nav -->
-    <nav id="mainNav" class="adaptive-nav fixed top-6 left-0 right-0 z-40 flex justify-center px-6">
-        <div class="backdrop-blur-md bg-zinc-900/40 border border-white/5 rounded-full px-6 py-3 flex items-center justify-between gap-12 shadow-2xl">
-            <a href="#" class="display-font font-bold tracking-tighter text-sm uppercase hover:text-lime-400 transition-colors">Ramsy.</a>
+    <nav id="mainNav" class="adaptive-nav fixed top-3 md:top-6 left-0 right-0 z-40 flex justify-center px-3 md:px-6">
+        <div class="backdrop-blur-md bg-zinc-900/40 border border-white/5 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-between gap-4 md:gap-12 shadow-2xl w-full max-w-[95vw] md:max-w-none">
+            <a href="#" class="display-font font-bold tracking-tighter text-xs md:text-sm uppercase hover:text-lime-400 transition-colors">Ramsy.</a>
             
             <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide uppercase text-zinc-400 nav-text">
                 <a href="#positioning" class="hover:text-white transition-colors">Positioning</a>
@@ -206,18 +256,18 @@
                 <a href="#connect" class="hover:text-white transition-colors">Contact</a>
             </div>
 
-            <a href="#connect" class="nav-cta flex items-center gap-2 text-xs font-bold uppercase tracking-wide bg-white text-black px-4 py-1.5 rounded-full hover:bg-lime-400 transition-colors duration-300">
+            <a href="#connect" class="nav-cta flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-wide bg-white text-black px-3 md:px-4 py-1.5 rounded-full hover:bg-lime-400 transition-colors duration-300">
                 Engage
             </a>
         </div>
     </nav>
 
     <!-- HERO: Presence & Philosophy -->
-    <section class="relative min-h-screen flex flex-col justify-end pb-24 px-6 lg:px-12 pt-32">
+    <section class="relative min-h-screen flex flex-col justify-end pb-16 md:pb-24 px-4 md:px-6 lg:px-12 pt-24 md:pt-32">
         <!-- Ambient Light -->
-        <div class="blob w-96 h-96 top-0 right-0 translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob w-64 h-64 md:w-96 md:h-96 top-0 right-0 translate-x-1/2 -translate-y-1/2"></div>
         
-        <div class="max-w-screen-2xl mx-auto w-full border-l border-white/10 pl-6 lg:pl-12 relative">
+        <div class="max-w-screen-2xl mx-auto w-full border-l border-white/10 pl-4 md:pl-6 lg:pl-12 relative">
             
             <!-- Moniker -->
             <h1 class="reveal-text display-font headline-hero font-semibold text-white mb-6">
@@ -226,33 +276,33 @@
             </h1>
 
             <!-- Core Philosophy -->
-            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12 w-full mt-16 border-t border-white/10 pt-10">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 md:gap-12 w-full mt-8 md:mt-16 border-t border-white/10 pt-6 md:pt-10">
                 <div class="reveal-text delay-200 max-w-3xl">
-                    <p class="text-2xl md:text-3xl font-light text-zinc-300 leading-tight mb-8">
-                        Most businesses fail because they can't make decisions fast enough.<br>
+                    <p class="text-lg md:text-2xl lg:text-3xl font-light text-zinc-300 leading-tight mb-6 md:mb-8">
+                        Most businesses fail because they can't make decisions fast enough.<br class="hidden md:block">
                         <span class="text-white font-medium">I build the systems that make the right decision inevitable.</span>
                     </p>
-                    <p class="text-base md:text-lg text-zinc-400 leading-relaxed">
+                    <p class="text-sm md:text-base lg:text-lg text-zinc-400 leading-relaxed">
                         Chief Future Officer. 20+ years turning distressed assets into profitable enterprises. Specializing in high-stakes turnarounds, business operating systems, and board-level strategic architecture.
                     </p>
                 </div>
                 
-                <div class="reveal-text delay-300 flex flex-col gap-3">
-                    <span class="text-lime-400 text-xs font-mono uppercase tracking-widest">[ Engagements ]</span>
-                    <span class="text-sm text-zinc-400">Delivered through<br><span class="text-white font-medium">D Cube International</span></span>
+                <div class="reveal-text delay-300 flex flex-col gap-2 md:gap-3">
+                    <span class="text-lime-400 text-[10px] md:text-xs font-mono uppercase tracking-widest">[ Engagements ]</span>
+                    <span class="text-xs md:text-sm text-zinc-400">Delivered through<br><span class="text-white font-medium">D Cube International</span></span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- INTRODUCTORY SUMMARY -->
-    <section class="py-24 px-6 lg:px-12 border-t border-white/5 relative bg-zinc-950">
+    <section class="py-16 md:py-24 px-4 md:px-6 lg:px-12 border-t border-white/5 relative bg-zinc-950">
         <div class="max-w-screen-xl mx-auto">
             <div class="max-w-4xl mx-auto text-center">
-                <p class="text-xl md:text-2xl text-zinc-300 leading-relaxed mb-8">
+                <p class="text-lg md:text-xl lg:text-2xl text-zinc-300 leading-relaxed mb-6 md:mb-8">
                     When boards face existential threats — cash crises, strategic paralysis, operational breakdown — they need more than advice. <span class="text-white font-medium">They need systems that work when leadership changes, markets shift, and pressure intensifies.</span>
                 </p>
-                <p class="text-base md:text-lg text-zinc-400 leading-relaxed">
+                <p class="text-sm md:text-base lg:text-lg text-zinc-400 leading-relaxed">
                     Mohamed Ramsy has spent 20+ years as CEO, CFO, and COO across manufacturing, FMCG, retail, and export-driven businesses — building decision architectures that survive volatility. <span class="text-zinc-300">His work: converting organizational chaos into repeatable, scalable, antifragile operating systems.</span>
                 </p>
             </div>
@@ -260,9 +310,9 @@
     </section>
 
     <!-- POSITIONING: Who I Am -->
-    <section id="positioning" class="py-32 px-6 lg:px-12 relative bg-zinc-950">
+    <section id="positioning" class="py-16 md:py-32 px-4 md:px-6 lg:px-12 relative bg-zinc-950">
         <div class="max-w-screen-xl mx-auto">
-            <div class="grid lg:grid-cols-12 gap-16 items-start">
+            <div class="grid lg:grid-cols-12 gap-8 md:gap-16 items-start">
                 <div class="lg:col-span-4 sticky top-32">
                     <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-4 block">01 // Positioning</span>
                     <h2 class="display-font headline-section font-medium text-white">
@@ -271,26 +321,26 @@
                     </h2>
                 </div>
                 
-                <div class="lg:col-span-8 space-y-10">
-                    <div class="border-l-2 border-lime-400/30 pl-8">
-                        <p class="text-lg md:text-xl text-zinc-300 leading-relaxed mb-6">
+                <div class="lg:col-span-8 space-y-6 md:space-y-10">
+                    <div class="border-l-2 border-lime-400/30 pl-4 md:pl-8">
+                        <p class="text-base md:text-lg lg:text-xl text-zinc-300 leading-relaxed mb-4 md:mb-6">
                             I don't deliver PowerPoint decks.<br>
                             I don't run workshops that produce nothing.<br>
                             I don't leave behind 200-page reports that gather dust.
                         </p>
-                        <p class="text-xl md:text-2xl text-white font-medium leading-tight">
+                        <p class="text-lg md:text-xl lg:text-2xl text-white font-medium leading-tight">
                             I build operating systems that outlive the engagement — and the people who run them.
                         </p>
                     </div>
 
-                    <div class="space-y-6 text-base text-zinc-400 leading-relaxed">
+                    <div class="space-y-4 md:space-y-6 text-sm md:text-base text-zinc-400 leading-relaxed">
                         <p>
                             Over 20 years, I've operated in manufacturing, apparel, FMCG, retail, perfumes, and export-driven businesses — primarily in emerging markets where capital is scarce, volatility is constant, and mistakes are terminal. I've restructured distressed P&Ls, designed governance frameworks for family-owned conglomerates, and built financial control systems that survived currency crises.
                         </p>
                         <p>
                             Every engagement answers one question:
                         </p>
-                        <p class="text-lg text-zinc-300 italic border-l-2 border-white/20 pl-6">
+                        <p class="text-base md:text-lg text-zinc-300 italic border-l-2 border-white/20 pl-4 md:pl-6">
                             How do you build a business that makes correct decisions faster than the market punishes incorrect ones?
                         </p>
                         <p>
@@ -300,8 +350,8 @@
                     </div>
 
                     <div class="pt-6 border-t border-white/10">
-                        <p class="text-sm text-zinc-500 uppercase tracking-wider mb-3">Track Record</p>
-                        <p class="text-base text-zinc-400 leading-relaxed">
+                        <p class="text-xs md:text-sm text-zinc-500 uppercase tracking-wider mb-2 md:mb-3">Track Record</p>
+                        <p class="text-sm md:text-base text-zinc-400 leading-relaxed">
                             Restructured $100M+ in distressed assets. Designed operating models for businesses scaling from $10M to $100M ARR. Built financial control systems that survived sovereign debt crises. <span class="text-zinc-300">Zero theory. All implementation.</span>
                         </p>
                     </div>
@@ -311,12 +361,12 @@
     </section>
 
     <!-- CREDENTIALS: Subtle -->
-    <section class="py-16 border-y border-white/5 bg-zinc-900/30">
-        <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+    <section class="py-12 md:py-16 border-y border-white/5 bg-zinc-900/30">
+        <div class="max-w-screen-xl mx-auto px-4 md:px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8">
                 <div>
-                    <span class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-3 block">Credentials</span>
-                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400">
+                    <span class="text-zinc-500 text-[10px] md:text-xs font-mono uppercase tracking-widest mb-2 md:mb-3 block">Credentials</span>
+                    <div class="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-2 text-xs md:text-sm text-zinc-400">
                         <span>MBA | BSc (Management)</span>
                         <span class="text-zinc-600">•</span>
                         <span>ACMA | CGMA | CIA</span>
@@ -325,8 +375,8 @@
                     </div>
                 </div>
                 <div>
-                    <span class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-3 block">Experience</span>
-                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400">
+                    <span class="text-zinc-500 text-[10px] md:text-xs font-mono uppercase tracking-widest mb-2 md:mb-3 block">Experience</span>
+                    <div class="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-2 text-xs md:text-sm text-zinc-400">
                         <span>CEO, CFO, COO</span>
                         <span class="text-zinc-600">•</span>
                         <span>Lecturer & Trainer</span>
@@ -339,19 +389,19 @@
     </section>
 
     <!-- CORE CAPABILITIES: What I Actually Do -->
-    <section id="capabilities" class="py-32 px-6 lg:px-12 bg-zinc-950 relative">
+    <section id="capabilities" class="py-16 md:py-32 px-4 md:px-6 lg:px-12 bg-zinc-950 relative">
         <div class="max-w-screen-xl mx-auto">
-            <div class="mb-20">
+            <div class="mb-12 md:mb-20">
                 <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-4 block">02 // Core Capabilities</span>
                 <h2 class="display-font headline-section font-bold text-white mb-6">
                     What I Actually Do.
                 </h2>
-                <p class="text-lg text-zinc-400 max-w-3xl">
+                <p class="text-sm md:text-base lg:text-lg text-zinc-400 max-w-3xl">
                     Five capabilities. Each one delivers measurable improvement in decision speed, financial resilience, and organizational durability.
                 </p>
             </div>
 
-            <div class="space-y-16">
+            <div class="space-y-10 md:space-y-16">
                 <!-- Pillar 1 -->
                 <div class="group border-l-2 border-lime-400/30 hover:border-lime-400 pl-8 transition-colors">
                     <div class="flex items-start gap-4 mb-4">
@@ -514,18 +564,18 @@
     </section>
 
     <!-- HOW I WORK: Client Filter -->
-    <section class="py-24 px-6 lg:px-12 bg-zinc-900/30 border-y border-white/5">
+    <section class="py-16 md:py-24 px-4 md:px-6 lg:px-12 bg-zinc-900/30 border-y border-white/5">
         <div class="max-w-screen-xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div>
                     <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-4 block">How I Work</span>
-                    <h2 class="display-font text-4xl md:text-5xl font-medium text-white mb-6 leading-tight">
+                    <h2 class="display-font text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-4 md:mb-6 leading-tight">
                         Client Filter.
                     </h2>
-                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                    <p class="text-base md:text-lg text-zinc-400 leading-relaxed mb-6 md:mb-8">
                         I work with organizations facing:
                     </p>
-                    <ul class="space-y-3 text-base text-zinc-300">
+                    <ul class="space-y-2 md:space-y-3 text-sm md:text-base text-zinc-300">
                         <li class="flex items-start gap-3">
                             <span class="text-lime-400 mt-1">✓</span>
                             <span><span class="text-white">Existential cash crises</span> — liquidity at risk, runway < 6 months</span>
@@ -545,8 +595,8 @@
                     </ul>
                 </div>
                 <div class="border-l-2 border-lime-400/30 pl-8">
-                    <p class="text-xl text-white font-medium mb-6">Engagement Prerequisites:</p>
-                    <ul class="space-y-3 text-base text-zinc-400">
+                    <p class="text-lg md:text-xl text-white font-medium mb-4 md:mb-6">Engagement Prerequisites:</p>
+                    <ul class="space-y-2 md:space-y-3 text-sm md:text-base text-zinc-400">
                         <li class="flex items-start gap-3">
                             <span class="text-zinc-600 mt-1">×</span>
                             <span>Board/ownership willing to hear uncomfortable truths</span>
@@ -565,7 +615,7 @@
                         </li>
                     </ul>
                     <div class="mt-8 pt-8 border-t border-white/10">
-                        <p class="text-lg text-zinc-300 leading-relaxed">
+                        <p class="text-base md:text-lg text-zinc-300 leading-relaxed">
                             <span class="text-white font-medium">Typical engagement:</span> 90-day diagnostic → 6-12 month implementation → systems transfer to internal teams.
                         </p>
                     </div>
@@ -575,12 +625,12 @@
     </section>
 
     <!-- SERVICES (D CUBE): The Engine -->
-    <section id="services" class="py-32 px-6 lg:px-12 relative bg-zinc-950">
+    <section id="services" class="py-16 md:py-32 px-4 md:px-6 lg:px-12 relative bg-zinc-950">
         <!-- Background Gradient -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-lime-400/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-lime-400/5 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="max-w-screen-2xl mx-auto">
-            <div class="mb-20">
+            <div class="mb-12 md:mb-20">
                 <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-4 block">03 // Engagements & Services</span>
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div>
@@ -598,76 +648,76 @@
             </div>
 
             <!-- Bento Grid Layout -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 
                 <!-- Card 1 -->
-                <div class="service-card group p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm min-h-[320px] flex flex-col justify-between">
+                <div class="service-card group p-6 md:p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm min-h-[280px] md:min-h-[320px] flex flex-col justify-between">
                     <div>
-                        <i data-lucide="trending-up" class="w-10 h-10 text-zinc-500 group-hover:text-lime-400 mb-8 transition-colors"></i>
-                        <h3 class="text-2xl font-medium text-white mb-3 tracking-tight">Turnaround & Restructuring</h3>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
+                        <i data-lucide="trending-up" class="w-8 h-8 md:w-10 md:h-10 text-zinc-500 group-hover:text-lime-400 mb-6 md:mb-8 transition-colors"></i>
+                        <h3 class="text-xl md:text-2xl font-medium text-white mb-2 md:mb-3 tracking-tight">Turnaround & Restructuring</h3>
+                        <p class="text-xs md:text-sm text-zinc-500 leading-relaxed">
                             90-day cash stabilization. P&L restructuring. Creditor negotiations. Typical outcome: 40-60% cost reduction, positive EBITDA within 6 months.
                         </p>
                     </div>
-                    <div class="mt-10 flex justify-between items-center">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">High-Stakes</span>
-                        <span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black transition-all">
-                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                    <div class="mt-6 md:mt-10 flex justify-between items-center">
+                        <span class="text-[10px] md:text-xs text-lime-400 font-mono uppercase tracking-wider">High-Stakes</span>
+                        <span class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black transition-all">
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </span>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="service-card group p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm min-h-[320px] flex flex-col justify-between">
+                <div class="service-card group p-6 md:p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm min-h-[280px] md:min-h-[320px] flex flex-col justify-between">
                     <div>
-                        <i data-lucide="layers" class="w-10 h-10 text-zinc-500 group-hover:text-lime-400 mb-8 transition-colors"></i>
-                        <h3 class="text-2xl font-medium text-white mb-3 tracking-tight">Business Operating Systems</h3>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
+                        <i data-lucide="layers" class="w-8 h-8 md:w-10 md:h-10 text-zinc-500 group-hover:text-lime-400 mb-6 md:mb-8 transition-colors"></i>
+                        <h3 class="text-xl md:text-2xl font-medium text-white mb-2 md:mb-3 tracking-tight">Business Operating Systems</h3>
+                        <p class="text-xs md:text-sm text-zinc-500 leading-relaxed">
                             End-to-end operating model design. Decision rights. KPI frameworks. Governance architecture. Typical scope: 6-12 months, 3-5 functional areas.
                         </p>
                     </div>
-                    <div class="mt-10 flex justify-between items-center">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">Systems</span>
-                        <span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black transition-all">
-                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                    <div class="mt-6 md:mt-10 flex justify-between items-center">
+                        <span class="text-[10px] md:text-xs text-lime-400 font-mono uppercase tracking-wider">Systems</span>
+                        <span class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black transition-all">
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </span>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="service-card group p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm min-h-[320px] flex flex-col justify-between">
+                <div class="service-card group p-6 md:p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm min-h-[280px] md:min-h-[320px] flex flex-col justify-between">
                     <div>
-                        <i data-lucide="users" class="w-10 h-10 text-zinc-500 group-hover:text-lime-400 mb-8 transition-colors"></i>
-                        <h3 class="text-2xl font-medium text-white mb-3 tracking-tight">Board & Executive Advisory</h3>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
+                        <i data-lucide="users" class="w-8 h-8 md:w-10 md:h-10 text-zinc-500 group-hover:text-lime-400 mb-6 md:mb-8 transition-colors"></i>
+                        <h3 class="text-xl md:text-2xl font-medium text-white mb-2 md:mb-3 tracking-tight">Board & Executive Advisory</h3>
+                        <p class="text-xs md:text-sm text-zinc-500 leading-relaxed">
                             Fractional CFO/COO. Board-level strategic counsel. M&A due diligence. Succession planning. Retainer or project-based.
                         </p>
                     </div>
-                    <div class="mt-10 flex justify-between items-center">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">Advisory</span>
-                        <span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black transition-all">
-                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                    <div class="mt-6 md:mt-10 flex justify-between items-center">
+                        <span class="text-[10px] md:text-xs text-lime-400 font-mono uppercase tracking-wider">Advisory</span>
+                        <span class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black transition-all">
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </span>
                     </div>
                 </div>
 
                  <!-- Card 4 (Wide) -->
-                 <div class="service-card md:col-span-2 lg:col-span-3 group p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm flex flex-col md:flex-row items-center justify-between gap-10">
+                 <div class="service-card md:col-span-2 lg:col-span-3 group p-6 md:p-10 bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
                     <div class="max-w-2xl">
-                        <h3 class="text-2xl font-medium text-white mb-3 flex items-center gap-3 tracking-tight">
-                            <i data-lucide="zap" class="w-6 h-6 text-lime-400"></i>
+                        <h3 class="text-xl md:text-2xl font-medium text-white mb-2 md:mb-3 flex items-center gap-2 md:gap-3 tracking-tight">
+                            <i data-lucide="zap" class="w-5 h-5 md:w-6 md:h-6 text-lime-400"></i>
                             Executive Education Programs
                         </h3>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
+                        <p class="text-xs md:text-sm text-zinc-500 leading-relaxed">
                             Custom Mini-MBA programs (8-12 weeks). CFO mastery for non-finance executives. Board effectiveness workshops. Cohort-based or in-house.
                         </p>
-                        <div class="mt-4 flex items-center gap-2">
-                            <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">Executive Development</span>
-                            <span class="text-xs text-zinc-600">•</span>
-                            <span class="text-xs text-zinc-500">10-50 participants</span>
+                        <div class="mt-3 md:mt-4 flex items-center gap-2">
+                            <span class="text-[10px] md:text-xs text-lime-400 font-mono uppercase tracking-wider">Executive Development</span>
+                            <span class="text-[10px] md:text-xs text-zinc-600">•</span>
+                            <span class="text-[10px] md:text-xs text-zinc-500">10-50 participants</span>
                         </div>
                     </div>
-                    <a href="#connect" class="cta-premium px-8 py-4 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all whitespace-nowrap font-bold">
+                    <a href="#connect" class="cta-premium px-6 md:px-8 py-3 md:py-4 border border-white/10 rounded-full text-[10px] md:text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all whitespace-nowrap font-bold">
                         Inquire
                     </a>
                 </div>
@@ -677,16 +727,16 @@
     </section>
 
     <!-- CLOSING POSITIONING -->
-    <section class="py-32 px-6 lg:px-12 bg-zinc-950 border-t border-white/5">
+    <section class="py-16 md:py-32 px-4 md:px-6 lg:px-12 bg-zinc-950 border-t border-white/5">
         <div class="max-w-screen-xl mx-auto">
             <div class="max-w-3xl mx-auto text-center">
-                <h2 class="display-font text-4xl md:text-5xl font-medium text-white mb-8 leading-tight">
+                <h2 class="display-font text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-6 md:mb-8 leading-tight">
                     If you want inspiration,<br>hire a speaker.
                 </h2>
-                <p class="text-2xl md:text-3xl text-lime-400 font-medium mb-8">
+                <p class="text-xl md:text-2xl lg:text-3xl text-lime-400 font-medium mb-6 md:mb-8">
                     If you want transformation,<br>build a system.
                 </p>
-                <p class="text-lg text-zinc-400">
+                <p class="text-base md:text-lg text-zinc-400">
                     That's the work I do.
                 </p>
             </div>
@@ -694,16 +744,16 @@
     </section>
 
     <!-- CONTACT: The Invitation -->
-    <section id="connect" class="py-32 px-6 lg:px-12 bg-zinc-950 text-white relative">
-        <div class="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-20">
+    <section id="connect" class="py-16 md:py-32 px-4 md:px-6 lg:px-12 bg-zinc-950 text-white relative">
+        <div class="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-20">
             
             <div>
                 <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-6 block">04 // Engagement</span>
                 <h2 class="display-font headline-section font-bold mb-8">
                     Start the<br>Conversation.
                 </h2>
-                <div class="space-y-6 text-zinc-400 text-base">
-                    <p class="text-lg text-zinc-300">
+                <div class="space-y-4 md:space-y-6 text-zinc-400 text-sm md:text-base">
+                    <p class="text-base md:text-lg text-zinc-300">
                         All engagements are delivered through <span class="text-white font-medium">D Cube International</span>.
                     </p>
                     <p>
@@ -713,35 +763,35 @@
                         High-stakes. Transformation-heavy. Rigorous thinking required.
                     </p>
                     
-                    <div class="flex flex-col gap-4 mt-12">
+                    <div class="flex flex-col gap-3 md:gap-4 mt-8 md:mt-12">
                         <a href="mailto:hello@mohamedramsy.com" class="flex items-center gap-3 text-white hover:text-lime-400 transition-colors">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            <span class="text-lg tracking-wide">hello@mohamedramsy.com</span>
+                            <i data-lucide="mail" class="w-4 h-4 md:w-5 md:h-5"></i>
+                            <span class="text-base md:text-lg tracking-wide">hello@mohamedramsy.com</span>
                         </a>
                         <a href="#" class="flex items-center gap-3 text-white hover:text-lime-400 transition-colors">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            <span class="text-lg tracking-wide">LinkedIn Profile</span>
+                            <i data-lucide="linkedin" class="w-4 h-4 md:w-5 md:h-5"></i>
+                            <span class="text-base md:text-lg tracking-wide">LinkedIn Profile</span>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Minimal Form -->
-            <form class="space-y-10 mt-8 lg:mt-0">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <form class="space-y-6 md:space-y-10 mt-8 lg:mt-0">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                     <div class="group">
-                        <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Name</label>
-                        <input type="text" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Your name">
+                        <label class="block text-[10px] md:text-xs font-mono uppercase text-zinc-500 mb-2 md:mb-3 group-hover:text-lime-400 transition-colors">Name</label>
+                        <input type="text" class="w-full bg-transparent border-b border-zinc-700 py-3 md:py-4 text-base md:text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Your name">
                     </div>
                     <div class="group">
-                        <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Company</label>
-                        <input type="text" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Organization">
+                        <label class="block text-[10px] md:text-xs font-mono uppercase text-zinc-500 mb-2 md:mb-3 group-hover:text-lime-400 transition-colors">Company</label>
+                        <input type="text" class="w-full bg-transparent border-b border-zinc-700 py-3 md:py-4 text-base md:text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Organization">
                     </div>
                 </div>
 
                 <div class="group">
-                    <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Engagement Type</label>
-                    <select class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors text-zinc-300 appearance-none rounded-none">
+                    <label class="block text-[10px] md:text-xs font-mono uppercase text-zinc-500 mb-2 md:mb-3 group-hover:text-lime-400 transition-colors">Engagement Type</label>
+                    <select class="w-full bg-transparent border-b border-zinc-700 py-3 md:py-4 text-base md:text-lg focus:outline-none focus:border-lime-400 transition-colors text-zinc-300 appearance-none rounded-none">
                         <option class="bg-zinc-900">Turnaround & Restructuring</option>
                         <option class="bg-zinc-900">Business Operating Systems</option>
                         <option class="bg-zinc-900">Board & Executive Advisory</option>
@@ -751,11 +801,11 @@
                 </div>
 
                 <div class="group">
-                    <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Challenge Context</label>
-                    <textarea rows="3" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800 resize-none" placeholder="Describe the strategic challenge..."></textarea>
+                    <label class="block text-[10px] md:text-xs font-mono uppercase text-zinc-500 mb-2 md:mb-3 group-hover:text-lime-400 transition-colors">Challenge Context</label>
+                    <textarea rows="3" class="w-full bg-transparent border-b border-zinc-700 py-3 md:py-4 text-base md:text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800 resize-none" placeholder="Describe the strategic challenge..."></textarea>
                 </div>
 
-                <button type="button" class="cta-premium mt-10 px-12 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-lime-400 transition-all duration-300 w-full md:w-auto rounded-sm">
+                <button type="button" class="cta-premium mt-6 md:mt-10 px-8 md:px-12 py-4 md:py-5 bg-white text-black font-bold uppercase text-xs md:text-sm tracking-widest hover:bg-lime-400 transition-all duration-300 w-full md:w-auto rounded-sm">
                     Submit Request
                 </button>
             </form>
@@ -764,14 +814,14 @@
     </section>
 
     <!-- FOOTER: Brutalist -->
-    <footer class="bg-zinc-950 border-t border-white/10 pt-16 pb-8 px-6 lg:px-12">
-        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+    <footer class="bg-zinc-950 border-t border-white/10 pt-12 md:pt-16 pb-6 md:pb-8 px-4 md:px-6 lg:px-12">
+        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8 md:gap-12">
             <div>
-                <h3 class="display-font text-[15vw] md:text-[8vw] leading-none font-bold text-zinc-900 select-none">
+                <h3 class="display-font text-[20vw] md:text-[15vw] lg:text-[8vw] leading-none font-bold text-zinc-900 select-none">
                     RAMSY.
                 </h3>
             </div>
-            <div class="flex flex-col md:items-end gap-2 text-zinc-600 text-xs font-mono uppercase tracking-widest">
+            <div class="flex flex-col md:items-end gap-2 text-zinc-600 text-[10px] md:text-xs font-mono uppercase tracking-widest">
                 <p>© 2024 Mohamed Ramsy</p>
                 <p>Designed for Impact</p>
                 <div class="flex gap-4 mt-2">
