@@ -188,150 +188,317 @@
             height: 300px;
         }
 
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(24, 24, 27, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 39;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #a1a1aa;
+            font-size: 1.125rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu a:hover {
+            color: #a3e635;
+        }
+
         /* Mobile & Tablet Responsive Improvements */
         @media (max-width: 768px) {
+            /* Show hamburger on mobile */
+            .hamburger {
+                display: flex;
+            }
+            
             /* Reduce hero font size for mobile */
             .headline-hero {
-                font-size: clamp(3rem, 12vw, 5rem);
-                line-height: 0.9;
+                font-size: clamp(2.5rem, 10vw, 4rem) !important;
+                line-height: 0.95 !important;
             }
             
             .headline-section {
-                font-size: clamp(2rem, 7vw, 3.5rem);
-                line-height: 0.95;
+                font-size: clamp(1.75rem, 6vw, 3rem) !important;
+                line-height: 1 !important;
             }
             
             /* Better mobile navigation */
             .adaptive-nav {
-                top: 1rem;
-                padding: 0 1rem;
+                top: 0.75rem;
+                padding: 0 0.75rem;
             }
             
             nav .backdrop-blur-md {
                 padding: 0.75rem 1rem;
                 gap: 0.5rem;
                 width: 100%;
-                justify-content: space-between;
+                max-width: 100%;
             }
             
-            /* Hide nav text on very small screens */
+            /* Hide nav text on mobile */
             .nav-text {
                 display: none !important;
             }
             
             /* Mobile-friendly service cards */
             .service-card {
-                min-height: 280px;
-                padding: 2rem 1.5rem;
+                min-height: auto !important;
+                padding: 1.5rem !important;
             }
             
             /* Better mobile spacing */
             section {
-                padding-top: 4rem !important;
-                padding-bottom: 4rem !important;
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            /* Fix hero section mobile */
+            .min-h-screen {
+                min-height: 100vh;
+                min-height: 100dvh;
             }
             
             /* Mobile typography adjustments */
+            .text-xl {
+                font-size: 1.125rem !important;
+                line-height: 1.5 !important;
+            }
+            
             .text-2xl {
-                font-size: 1.25rem;
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
             }
             
             .text-3xl {
-                font-size: 1.5rem;
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
             }
             
             .text-4xl {
-                font-size: 1.875rem;
+                font-size: 1.75rem !important;
+                line-height: 1.2 !important;
             }
             
             .text-5xl {
-                font-size: 2.25rem;
+                font-size: 2rem !important;
+                line-height: 1.1 !important;
             }
             
             /* Mobile list items */
             ul li {
-                font-size: 0.875rem;
+                font-size: 0.875rem !important;
+                line-height: 1.6 !important;
             }
             
             /* Better mobile buttons */
             .cta-premium {
-                padding: 0.875rem 1.5rem;
-                font-size: 0.75rem;
+                padding: 0.875rem 1.25rem !important;
+                font-size: 0.75rem !important;
+                width: 100%;
+                text-align: center;
             }
             
             /* Mobile grid improvements */
             .grid {
-                gap: 1rem;
+                gap: 1rem !important;
             }
             
-            /* Reduce blob effects on mobile for performance */
+            /* Fix grid columns on mobile */
+            .lg\:grid-cols-12,
+            .lg\:grid-cols-2,
+            .lg\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Reduce blob effects on mobile */
             .blob {
-                filter: blur(60px);
-                opacity: 0.1;
+                filter: blur(40px);
+                opacity: 0.08;
+                display: none;
+            }
+            
+            /* Fix sticky positioning on mobile */
+            .sticky {
+                position: relative !important;
+            }
+            
+            /* Better mobile padding */
+            .px-6 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .px-12 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* Mobile gap adjustments */
+            .gap-12 {
+                gap: 2rem !important;
+            }
+            
+            .gap-16 {
+                gap: 2rem !important;
+            }
+            
+            /* Fix border padding on mobile */
+            .border-l {
+                border-left: none !important;
+                padding-left: 0 !important;
+            }
+            
+            .pl-6,
+            .pl-8,
+            .pl-12 {
+                padding-left: 1rem !important;
             }
         }
         
         @media (max-width: 640px) {
             /* Extra small mobile adjustments */
             .headline-hero {
-                font-size: clamp(2.5rem, 10vw, 4rem);
+                font-size: clamp(2rem, 9vw, 3.5rem) !important;
+                line-height: 1 !important;
             }
             
             .headline-section {
-                font-size: clamp(1.75rem, 6vw, 2.5rem);
+                font-size: clamp(1.5rem, 5vw, 2.25rem) !important;
+                line-height: 1.1 !important;
             }
             
             /* Tighter mobile spacing */
             .px-6 {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 0.875rem !important;
+                padding-right: 0.875rem !important;
             }
             
             .py-32 {
-                padding-top: 3rem;
-                padding-bottom: 3rem;
+                padding-top: 2.5rem !important;
+                padding-bottom: 2.5rem !important;
             }
             
             .py-24 {
-                padding-top: 2.5rem;
-                padding-bottom: 2.5rem;
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            .py-16 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
             }
             
             /* Service card mobile optimization */
             .service-card {
-                min-height: 240px;
-                padding: 1.5rem 1.25rem;
+                min-height: auto !important;
+                padding: 1.25rem !important;
             }
             
             /* Mobile form improvements */
             input, textarea, select {
-                font-size: 16px !important; /* Prevents zoom on iOS */
+                font-size: 16px !important;
+                padding: 0.875rem !important;
+            }
+            
+            /* Extra small text adjustments */
+            .text-base {
+                font-size: 0.875rem !important;
+            }
+            
+            .text-lg {
+                font-size: 1rem !important;
+            }
+            
+            /* Mobile button full width */
+            button, .cta-premium {
+                width: 100%;
+            }
+            
+            /* Fix mobile margins */
+            .mb-8 {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .mb-6 {
+                margin-bottom: 1rem !important;
+            }
+            
+            .mt-16 {
+                margin-top: 2rem !important;
             }
         }
         
         @media (min-width: 641px) and (max-width: 1024px) {
             /* Tablet-specific improvements */
             .headline-hero {
-                font-size: clamp(4rem, 10vw, 7rem);
+                font-size: clamp(3.5rem, 9vw, 6rem) !important;
+                line-height: 0.95 !important;
             }
             
             .headline-section {
-                font-size: clamp(2.5rem, 6vw, 4.5rem);
+                font-size: clamp(2.25rem, 5.5vw, 4rem) !important;
+                line-height: 1 !important;
             }
             
             /* Tablet navigation */
             nav .backdrop-blur-md {
-                gap: 2rem;
+                gap: 1.5rem;
             }
             
             /* Tablet service cards */
             .service-card {
-                min-height: 300px;
+                min-height: 280px;
+                padding: 2rem;
             }
             
             /* Better tablet grid layouts */
             .lg\:grid-cols-12 {
                 grid-template-columns: repeat(12, minmax(0, 1fr));
+            }
+            
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            
+            /* Tablet spacing */
+            .py-32 {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+            
+            .py-24 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
             }
         }
         
@@ -339,17 +506,54 @@
         @media (hover: none) and (pointer: coarse) {
             /* Larger touch targets */
             a, button {
-                min-height: 44px;
-                min-width: 44px;
+                min-height: 48px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
             }
             
             /* Disable hover effects on touch devices */
             .service-card:hover {
                 transform: none;
+                box-shadow: none;
             }
             
             .hover-lift:hover {
                 transform: none;
+            }
+            
+            .cta-premium:hover::after {
+                width: 0;
+                height: 0;
+            }
+        }
+        
+        /* Prevent horizontal scroll */
+        * {
+            max-width: 100%;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        /* Fix container widths */
+        .max-w-screen-2xl,
+        .max-w-screen-xl {
+            max-width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        @media (min-width: 1280px) {
+            .max-w-screen-xl {
+                max-width: 1280px;
+            }
+        }
+        
+        @media (min-width: 1536px) {
+            .max-w-screen-2xl {
+                max-width: 1536px;
             }
         }
     </style>
@@ -371,11 +575,25 @@
                 <a href="#connect" class="hover:text-white transition-colors">Contact</a>
             </div>
 
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <a href="#connect" class="nav-cta flex items-center gap-2 text-xs font-bold uppercase tracking-wide bg-white text-black px-4 py-1.5 rounded-full hover:bg-lime-400 transition-colors duration-300">
                 Engage
             </a>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="#positioning" onclick="closeMobileMenu()">Positioning</a>
+        <a href="#capabilities" onclick="closeMobileMenu()">What I Do</a>
+        <a href="#services" onclick="closeMobileMenu()">Engagements</a>
+        <a href="#connect" onclick="closeMobileMenu()">Contact</a>
+    </div>
 
     <!-- HERO: Presence & Philosophy -->
     <section class="relative min-h-screen flex flex-col justify-end pb-24 px-6 lg:px-12 pt-32">
@@ -950,6 +1168,38 @@
     <script>
         lucide.createIcons();
         
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', toggleMobileMenu);
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Close mobile menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+        
         // Smooth scroll animation observer
         const scrollFadeElements = document.querySelectorAll('.scroll-fade');
         
@@ -966,16 +1216,26 @@
         
         scrollFadeElements.forEach(el => scrollObserver.observe(el));
         
-        // Enhanced service card interactions
-        const serviceCards = document.querySelectorAll('.service-card');
-        serviceCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-4px)';
+        // Enhanced service card interactions (only on non-touch devices)
+        if (window.matchMedia('(hover: hover)').matches) {
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
             });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
+        }
+        
+        // Prevent zoom on iOS when focusing inputs
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            const inputs = document.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.style.fontSize = '16px';
             });
-        });
+        }
     </script>
 
 </body></html>
