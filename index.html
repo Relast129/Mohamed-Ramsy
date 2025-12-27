@@ -787,6 +787,45 @@
             .border-b {
                 padding-bottom: 2rem !important;
             }
+            
+            /* Mobile Gallery Optimizations */
+            .gallery-item {
+                min-height: 280px !important;
+            }
+            
+            /* Mobile Lightbox - Larger Touch Targets */
+            #lightbox button {
+                width: 48px !important;
+                height: 48px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: rgba(0, 0, 0, 0.5) !important;
+                border-radius: 50% !important;
+            }
+            
+            #lightbox button:active {
+                background: rgba(163, 230, 53, 0.3) !important;
+            }
+            
+            /* Mobile Gallery Toggle Button */
+            #galleryToggle {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 1.25rem 2rem !important;
+                font-size: 0.875rem !important;
+                touch-action: manipulation;
+            }
+            
+            /* Mobile Article Cards - Better Spacing */
+            article {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            /* Mobile Footer - Better Stacking */
+            footer .grid {
+                gap: 2.5rem !important;
+            }
         }
         
         @media (min-width: 641px) and (max-width: 1024px) {
@@ -1502,28 +1541,32 @@
     </section>
 
     <!-- IMPACT & ENGAGEMENTS: Media Gallery -->
-    <section id="impact" class="py-32 px-6 lg:px-12 bg-zinc-900/20 border-y border-white/5 relative">
+    <section id="impact" class="py-20 md:py-32 px-4 md:px-6 lg:px-12 bg-zinc-900/20 border-y border-white/5 relative">
         <div class="max-w-screen-2xl mx-auto">
-            <div class="mb-20">
-                <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-4 block">Impact & Engagements</span>
-                <h2 class="display-font headline-section font-bold text-white mb-6">
-                    Proof of Work<span class="text-zinc-600">.</span>
+            <!-- Mobile-Optimized Header -->
+            <div class="mb-12 md:mb-20">
+                <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-3 md:mb-4 block">Impact & Engagements</span>
+                <h2 class="display-font text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+                    Real Moments.<br class="md:hidden"> Real Influence<span class="text-zinc-600">.</span>
                 </h2>
-                <p class="text-lg text-zinc-400 max-w-3xl mb-4">
-                    Real engagements. Real impact. Trainings, workshops, keynotes, and board-level sessions delivered globally through D Cube International.
-                </p>
-                <p class="text-sm text-zinc-500">
-                    All programs and engagements executed through <span class="text-white font-medium">D Cube International</span>.
+                <!-- Mobile: Minimal Text -->
+                <p class="text-base md:text-lg text-zinc-400 mb-2">
+                    Workshops, keynotes, and global engagements delivered through <span class="text-white font-medium">D Cube International</span>.
                 </p>
             </div>
 
-            <!-- Dynamic Gallery Grid -->
-            <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Dynamic Gallery Grid - Mobile Optimized -->
+            <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
                 <!-- Images will be loaded dynamically via JavaScript -->
             </div>
 
-            <div class="mt-12 text-center">
-                <p class="text-xs text-zinc-600 font-mono uppercase tracking-wider">
+            <!-- Expand/Collapse CTA -->
+            <div class="mt-8 md:mt-12 text-center">
+                <button id="galleryToggle" class="inline-flex items-center gap-3 px-8 md:px-12 py-4 md:py-5 bg-white/5 hover:bg-white hover:text-black border border-white/10 hover:border-lime-400 rounded-full text-sm md:text-xs uppercase tracking-widest font-bold transition-all duration-300 group">
+                    <span id="toggleText">View Full Gallery</span>
+                    <i data-lucide="chevron-down" id="toggleIcon" class="w-4 h-4 transition-transform duration-300"></i>
+                </button>
+                <p class="text-xs text-zinc-600 font-mono uppercase tracking-wider mt-6">
                     <span id="imageCount">Loading images...</span>
                 </p>
             </div>
@@ -1548,14 +1591,18 @@
                 
                 <!-- Article 1: Worst-Case Learning -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <i data-lucide="alert-triangle" class="w-12 h-12 text-lime-400/40"></i>
-                    </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
-                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            The Power of Worst-Case Learning
-                        </h3>
+                        <div class="flex items-start gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 text-lime-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                                <h3 class="text-lg font-medium text-white mt-2 mb-2 group-hover:text-lime-400 transition-colors">
+                                    The Power of Worst-Case Learning
+                                </h3>
+                            </div>
+                        </div>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
                             Strategic thinking through scenario planning and preparing for worst-case outcomes to build organizational resilience.
                         </p>
@@ -1568,14 +1615,18 @@
 
                 <!-- Article 2: Strategy & Leadership -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <i data-lucide="target" class="w-12 h-12 text-lime-400/40"></i>
-                    </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
-                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            Business Strategy & Leadership
-                        </h3>
+                        <div class="flex items-start gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="target" class="w-5 h-5 text-lime-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                                <h3 class="text-lg font-medium text-white mt-2 mb-2 group-hover:text-lime-400 transition-colors">
+                                    Business Strategy & Leadership
+                                </h3>
+                            </div>
+                        </div>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
                             Insights on strategic execution, leadership development, and building high-performance organizations through D Cube International.
                         </p>
@@ -1588,14 +1639,18 @@
 
                 <!-- Article 3: Risk & Reality -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <i data-lucide="shield-alert" class="w-12 h-12 text-lime-400/40"></i>
-                    </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
-                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            The Untold Side of Risk
-                        </h3>
+                        <div class="flex items-start gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-alert" class="w-5 h-5 text-lime-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                                <h3 class="text-lg font-medium text-white mt-2 mb-2 group-hover:text-lime-400 transition-colors">
+                                    The Untold Side of Risk
+                                </h3>
+                            </div>
+                        </div>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
                             Understanding risk management beyond traditional frameworks and building antifragile decision-making systems.
                         </p>
@@ -1608,14 +1663,18 @@
 
                 <!-- Article 4: Keynote & Leadership -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <i data-lucide="users" class="w-12 h-12 text-lime-400/40"></i>
-                    </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
-                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            Fatherhood, Leadership & Work-Life Balance
-                        </h3>
+                        <div class="flex items-start gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="users" class="w-5 h-5 text-lime-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                                <h3 class="text-lg font-medium text-white mt-2 mb-2 group-hover:text-lime-400 transition-colors">
+                                    Fatherhood, Leadership & Work-Life Balance
+                                </h3>
+                            </div>
+                        </div>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
                             Reflections on leadership principles, personal values, and balancing high-stakes professional work with family commitments.
                         </p>
@@ -1628,14 +1687,18 @@
 
                 <!-- Article 5: Object-Intelligent Business Models -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <i data-lucide="brain" class="w-12 h-12 text-lime-400/40"></i>
-                    </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
-                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            Object-Intelligent Business Models
-                        </h3>
+                        <div class="flex items-start gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="brain" class="w-5 h-5 text-lime-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                                <h3 class="text-lg font-medium text-white mt-2 mb-2 group-hover:text-lime-400 transition-colors">
+                                    Object-Intelligent Business Models
+                                </h3>
+                            </div>
+                        </div>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
                             Advanced frameworks for designing adaptive business models that respond intelligently to market dynamics and organizational needs.
                         </p>
@@ -1648,14 +1711,18 @@
 
                 <!-- Article 6: Public Sector & Resilience -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <i data-lucide="building-2" class="w-12 h-12 text-lime-400/40"></i>
-                    </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
-                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            Building Resilient Public Sector Organizations
-                        </h3>
+                        <div class="flex items-start gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-lime-400/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="building-2" class="w-5 h-5 text-lime-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                                <h3 class="text-lg font-medium text-white mt-2 mb-2 group-hover:text-lime-400 transition-colors">
+                                    Building Resilient Public Sector Organizations
+                                </h3>
+                            </div>
+                        </div>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
                             Strategic frameworks for future-ready public sector transformation, governance, and institutional resilience building.
                         </p>
@@ -1784,20 +1851,67 @@
         </div>
     </div>
 
-    <!-- FOOTER: Brutalist -->
+    <!-- FOOTER: Enhanced -->
     <footer class="bg-zinc-950 border-t border-white/10 pt-16 pb-8 px-6 lg:px-12">
-        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
-            <div>
-                <h3 class="display-font text-[15vw] md:text-[8vw] leading-none font-bold text-zinc-900 select-none">
-                    RAMSY.
-                </h3>
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <h3 class="display-font text-6xl md:text-7xl leading-none font-bold text-zinc-900 select-none mb-6">
+                        RAMSY.
+                    </h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">
+                        Strategic advisor specializing in high-stakes turnarounds, business systematization, and board-level architecture.
+                    </p>
+                </div>
+                
+                <!-- Contact Information -->
+                <div>
+                    <h4 class="text-xs font-mono uppercase tracking-widest text-lime-400 mb-6">Contact</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-xs text-zinc-600 mb-1">Phone / WhatsApp</p>
+                            <a href="tel:+94774570705" class="text-sm text-white hover:text-lime-400 transition-colors">+94 774 570 705</a>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-600 mb-1">Email</p>
+                            <a href="mailto:mohamed.ramsy@gmail.com" class="text-sm text-white hover:text-lime-400 transition-colors">mohamed.ramsy@gmail.com</a>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-600 mb-1">LinkedIn</p>
+                            <a href="https://www.linkedin.com/in/mohamed-ramsy-31094921/" target="_blank" rel="noopener noreferrer" class="text-sm text-white hover:text-lime-400 transition-colors inline-flex items-center gap-2">
+                                View Profile
+                                <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xs font-mono uppercase tracking-widest text-lime-400 mb-6">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#capabilities" class="block text-sm text-zinc-500 hover:text-white transition-colors">Capabilities</a>
+                        <a href="#lectures" class="block text-sm text-zinc-500 hover:text-white transition-colors">Programs</a>
+                        <a href="#impact" class="block text-sm text-zinc-500 hover:text-white transition-colors">Impact</a>
+                        <a href="#publications" class="block text-sm text-zinc-500 hover:text-white transition-colors">Publications</a>
+                        <a href="#connect" class="block text-sm text-zinc-500 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
             </div>
-            <div class="flex flex-col md:items-end gap-2 text-zinc-600 text-xs font-mono uppercase tracking-widest">
-                <p>© 2024 Mohamed Ramsy</p>
-                <p class="text-white">Delivered through D Cube International</p>
-                <div class="flex gap-4 mt-2">
-                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-white transition-colors">Legal</a>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-xs text-zinc-600 font-mono uppercase tracking-widest text-center md:text-left">
+                    <p>© 2025 Mohamed Ramsy</p>
+                    <p class="mt-1">All engagements delivered through <span class="text-white">D Cube International</span></p>
+                </div>
+                <div class="text-xs text-zinc-600 text-center md:text-right">
+                    <p>Website created by <span class="text-white">D Cube International</span></p>
+                    <div class="flex gap-4 mt-2 justify-center md:justify-end">
+                        <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                        <a href="#" class="hover:text-white transition-colors">Legal</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1914,10 +2028,20 @@
         ];
         
         let currentImageIndex = 0;
+        let galleryExpanded = false;
+        let shuffledImages = [];
+        
+        // Responsive initial image counts
+        function getInitialImageCount() {
+            if (window.innerWidth < 640) return 4;  // Mobile: 4 images
+            if (window.innerWidth < 1024) return 6; // Tablet: 6 images
+            return 8; // Desktop: 8 images
+        }
         
         // Load gallery on page load
         window.addEventListener('DOMContentLoaded', function() {
             loadGallery();
+            setupGalleryToggle();
         });
         
         function loadGallery() {
@@ -1926,12 +2050,28 @@
             
             if (!gallery) return;
             
-            // Shuffle images for visual variety
-            const shuffledImages = [...galleryImages].sort(() => Math.random() - 0.5);
+            // Shuffle images for visual variety (only once)
+            if (shuffledImages.length === 0) {
+                shuffledImages = [...galleryImages].sort(() => Math.random() - 0.5);
+            }
             
-            shuffledImages.forEach((filename, index) => {
+            // Clear gallery
+            gallery.innerHTML = '';
+            
+            // Determine how many images to show
+            const imagesToShow = galleryExpanded ? shuffledImages.length : getInitialImageCount();
+            
+            // Create image elements
+            shuffledImages.slice(0, imagesToShow).forEach((filename, index) => {
                 const imgContainer = document.createElement('div');
-                imgContainer.className = 'group relative aspect-square bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden cursor-pointer transition-all hover:scale-[1.02]';
+                imgContainer.className = 'gallery-item group relative bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden cursor-pointer transition-all hover:scale-[1.02] opacity-0';
+                imgContainer.style.aspectRatio = '1';
+                
+                // Staggered fade-in animation
+                setTimeout(() => {
+                    imgContainer.style.transition = 'opacity 0.5s ease, transform 0.3s ease';
+                    imgContainer.style.opacity = '1';
+                }, index * 50);
                 
                 const img = document.createElement('img');
                 img.src = `pics/${filename}`;
@@ -1941,13 +2081,13 @@
                 
                 // Add click handler for lightbox
                 imgContainer.addEventListener('click', function() {
-                    openLightbox(index, shuffledImages);
+                    openLightbox(shuffledImages.indexOf(filename), shuffledImages);
                 });
                 
                 // Add overlay on hover
                 const overlay = document.createElement('div');
                 overlay.className = 'absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center';
-                overlay.innerHTML = '<i data-lucide="maximize-2" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>';
+                overlay.innerHTML = '<i data-lucide="maximize-2" class="w-6 h-6 md:w-8 md:h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>';
                 
                 imgContainer.appendChild(img);
                 imgContainer.appendChild(overlay);
@@ -1956,11 +2096,42 @@
             
             // Update image count
             if (imageCount) {
-                imageCount.textContent = `${galleryImages.length} Engagements Documented`;
+                if (galleryExpanded) {
+                    imageCount.textContent = `All ${galleryImages.length} Engagements`;
+                } else {
+                    imageCount.textContent = `Showing ${imagesToShow} of ${galleryImages.length} Engagements`;
+                }
             }
             
             // Reinitialize Lucide icons for new elements
             lucide.createIcons();
+        }
+        
+        function setupGalleryToggle() {
+            const toggleBtn = document.getElementById('galleryToggle');
+            const toggleText = document.getElementById('toggleText');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (!toggleBtn) return;
+            
+            toggleBtn.addEventListener('click', function() {
+                galleryExpanded = !galleryExpanded;
+                
+                // Update button text and icon
+                if (galleryExpanded) {
+                    toggleText.textContent = 'Collapse Gallery';
+                    toggleIcon.style.transform = 'rotate(180deg)';
+                } else {
+                    toggleText.textContent = 'View Full Gallery';
+                    toggleIcon.style.transform = 'rotate(0deg)';
+                    
+                    // Scroll to gallery section smoothly
+                    document.getElementById('impact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                
+                // Reload gallery with animation
+                loadGallery();
+            });
         }
         
         // ===== LIGHTBOX FUNCTIONALITY =====
