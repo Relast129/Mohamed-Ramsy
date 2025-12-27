@@ -1796,41 +1796,58 @@
             </div>
 
             <!-- Minimal Form -->
-            <form class="space-y-10 mt-8 lg:mt-0">
+            <form id="contactForm" class="space-y-10 mt-8 lg:mt-0">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="group">
                         <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Name</label>
-                        <input type="text" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Your name">
+                        <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Your name">
                     </div>
                     <div class="group">
                         <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Company</label>
-                        <input type="text" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Organization">
+                        <input type="text" id="company" name="company" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="Organization">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="group">
+                        <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="your@email.com">
+                    </div>
+                    <div class="group">
+                        <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800" placeholder="+94 XXX XXX XXX">
                     </div>
                 </div>
 
                 <div class="group">
                     <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Engagement Type</label>
-                    <select class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors text-zinc-300 appearance-none rounded-none">
+                    <select id="engagementType" name="engagementType" required class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors text-zinc-300 appearance-none rounded-none">
                         <option class="bg-zinc-900" value="">Select Engagement Type</option>
-                        <option class="bg-zinc-900">Strategic Advisory</option>
-                        <option class="bg-zinc-900">Business Systematization</option>
-                        <option class="bg-zinc-900">Turnaround Engagement</option>
-                        <option class="bg-zinc-900">Executive Coaching</option>
-                        <option class="bg-zinc-900">Board-Level Workshop</option>
-                        <option class="bg-zinc-900">Training / Lecture / Program</option>
-                        <option class="bg-zinc-900">Speaking Engagement</option>
-                        <option class="bg-zinc-900">Other</option>
+                        <option class="bg-zinc-900" value="Strategic Advisory">Strategic Advisory</option>
+                        <option class="bg-zinc-900" value="Business Systematization">Business Systematization</option>
+                        <option class="bg-zinc-900" value="Turnaround Engagement">Turnaround Engagement</option>
+                        <option class="bg-zinc-900" value="Executive Coaching">Executive Coaching</option>
+                        <option class="bg-zinc-900" value="Board-Level Workshop">Board-Level Workshop</option>
+                        <option class="bg-zinc-900" value="Training / Lecture / Program">Training / Lecture / Program</option>
+                        <option class="bg-zinc-900" value="Speaking Engagement">Speaking Engagement</option>
+                        <option class="bg-zinc-900" value="Other">Other</option>
                     </select>
                 </div>
 
                 <div class="group">
                     <label class="block text-xs font-mono uppercase text-zinc-500 mb-3 group-hover:text-lime-400 transition-colors">Challenge Context</label>
-                    <textarea rows="3" class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800 resize-none" placeholder="Describe the strategic challenge..."></textarea>
+                    <textarea id="message" name="message" rows="3" required class="w-full bg-transparent border-b border-zinc-700 py-4 text-lg focus:outline-none focus:border-lime-400 transition-colors placeholder-zinc-800 resize-none" placeholder="Describe the strategic challenge..."></textarea>
                 </div>
 
-                <button type="button" class="cta-premium mt-10 px-12 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-lime-400 transition-all duration-300 w-full md:w-auto rounded-sm">
-                    Submit Request
-                </button>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <button type="submit" class="cta-premium px-12 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-lime-400 transition-all duration-300 w-full md:w-auto rounded-sm">
+                        Send via Email
+                    </button>
+                    <button type="button" onclick="sendViaWhatsApp()" class="cta-premium px-12 py-5 bg-lime-400/10 border border-lime-400/30 text-lime-400 font-bold uppercase tracking-widest hover:bg-lime-400 hover:text-black transition-all duration-300 w-full md:w-auto rounded-sm flex items-center justify-center gap-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Send via WhatsApp
+                    </button>
+                </div>
             </form>
 
         </div>
@@ -2206,6 +2223,69 @@
                 closeLightbox();
             }
         });
+        
+        // ===== CONTACT FORM SUBMISSION =====
+        
+        // Handle form submission via email
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const engagementType = document.getElementById('engagementType').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email body
+            const emailBody = `New Engagement Request from Website
+
+Name: ${name}
+Company: ${company}
+Email: ${email}
+Phone: ${phone}
+Engagement Type: ${engagementType}
+
+Challenge Context:
+${message}
+
+---
+Sent via Mohamed Ramsy Website Contact Form`;
+            
+            // Create mailto link with both recipients
+            const mailtoLink = `mailto:mohamed.ramsy@gmail.com,ramzyraheesh@gmail.com?subject=New Engagement Request - ${engagementType}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation
+            alert('Opening your email client. Please send the pre-filled email to complete your request.');
+        });
+        
+        // Send via WhatsApp function
+        function sendViaWhatsApp() {
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value || 'Not specified';
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value || 'Not specified';
+            const engagementType = document.getElementById('engagementType').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate required fields
+            if (!name || !email || !engagementType || !message) {
+                alert('Please fill in all required fields (Name, Email, Engagement Type, and Challenge Context)');
+                return;
+            }
+            
+            // Create WhatsApp message
+            const whatsappMessage = `*New Engagement Request*\n\n*Name:* ${name}\n*Company:* ${company}\n*Email:* ${email}\n*Phone:* ${phone}\n*Engagement Type:* ${engagementType}\n\n*Challenge Context:*\n${message}\n\n_Sent via Mohamed Ramsy Website_`;
+            
+            // Create WhatsApp link
+            const whatsappLink = `https://wa.me/94774570705?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Open WhatsApp
+            window.open(whatsappLink, '_blank');
+        }
     </script>
 
 </body></html>
