@@ -903,7 +903,7 @@
                 <a href="#positioning" class="hover:text-white transition-colors">Positioning</a>
                 <a href="#capabilities" class="hover:text-white transition-colors">Capabilities</a>
                 <a href="#lectures" class="hover:text-white transition-colors">Programs</a>
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#impact" class="hover:text-white transition-colors">Impact</a>
                 <a href="#connect" class="hover:text-white transition-colors">Contact</a>
             </div>
 
@@ -924,7 +924,7 @@
         <a href="#positioning" onclick="closeMobileMenu()">Positioning</a>
         <a href="#capabilities" onclick="closeMobileMenu()">Capabilities</a>
         <a href="#lectures" onclick="closeMobileMenu()">Programs</a>
-        <a href="#services" onclick="closeMobileMenu()">Services</a>
+        <a href="#impact" onclick="closeMobileMenu()">Impact</a>
         <a href="#publications" onclick="closeMobileMenu()">Publications</a>
         <a href="#connect" onclick="closeMobileMenu()">Contact</a>
     </div>
@@ -1501,6 +1501,35 @@
         </div>
     </section>
 
+    <!-- IMPACT & ENGAGEMENTS: Media Gallery -->
+    <section id="impact" class="py-32 px-6 lg:px-12 bg-zinc-900/20 border-y border-white/5 relative">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="mb-20">
+                <span class="text-lime-400 font-mono text-xs uppercase tracking-widest mb-4 block">Impact & Engagements</span>
+                <h2 class="display-font headline-section font-bold text-white mb-6">
+                    Proof of Work<span class="text-zinc-600">.</span>
+                </h2>
+                <p class="text-lg text-zinc-400 max-w-3xl mb-4">
+                    Real engagements. Real impact. Trainings, workshops, keynotes, and board-level sessions delivered globally through D Cube International.
+                </p>
+                <p class="text-sm text-zinc-500">
+                    All programs and engagements executed through <span class="text-white font-medium">D Cube International</span>.
+                </p>
+            </div>
+
+            <!-- Dynamic Gallery Grid -->
+            <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Images will be loaded dynamically via JavaScript -->
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-xs text-zinc-600 font-mono uppercase tracking-wider">
+                    <span id="imageCount">Loading images...</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- PUBLICATIONS & INSIGHTS -->
     <section id="publications" class="py-32 px-6 lg:px-12 bg-zinc-950 relative">
         <div class="max-w-screen-xl mx-auto">
@@ -1510,79 +1539,129 @@
                     Knowledge Sharing<span class="text-zinc-600">.</span>
                 </h2>
                 <p class="text-lg text-zinc-400 max-w-3xl">
-                    Selected articles, thought leadership, and published work on business systems, strategic decision-making, and organizational transformation.
+                    Selected articles and thought leadership on business systems, strategic decision-making, and organizational transformation. Published on LinkedIn.
                 </p>
             </div>
 
             <!-- Publications Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Article Card 1 -->
+                <!-- Article 1: Worst-Case Learning -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <!-- Article Image Placeholder -->
-                    <div class="aspect-video bg-zinc-900/80 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <div class="text-center text-zinc-600">
-                            <i data-lucide="file-text" class="w-10 h-10 mx-auto mb-2 opacity-50"></i>
-                            <p class="text-xs">Article Image</p>
-                        </div>
+                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
+                        <i data-lucide="alert-triangle" class="w-12 h-12 text-lime-400/40"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">Article</span>
+                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
                         <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            Building Antifragile Business Systems
+                            The Power of Worst-Case Learning
                         </h3>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
-                            How to design organizational systems that gain strength from volatility and market shocks.
+                            Strategic thinking through scenario planning and preparing for worst-case outcomes to build organizational resilience.
                         </p>
-                        <a href="#" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
-                            Read Article
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <a href="https://www.linkedin.com/posts/mohamed-ramsy-31094921_the-power-of-worst-case-learning-activity-7406344843494510592-LS8S" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
+                            Read on LinkedIn
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </article>
 
-                <!-- Article Card 2 -->
+                <!-- Article 2: Strategy & Leadership -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-zinc-900/80 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <div class="text-center text-zinc-600">
-                            <i data-lucide="file-text" class="w-10 h-10 mx-auto mb-2 opacity-50"></i>
-                            <p class="text-xs">Article Image</p>
-                        </div>
+                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
+                        <i data-lucide="target" class="w-12 h-12 text-lime-400/40"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">Thought Leadership</span>
+                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
                         <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            The Decision Architecture Framework
+                            Business Strategy & Leadership
                         </h3>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
-                            A systematic approach to designing decision rights, data flows, and accountability loops.
+                            Insights on strategic execution, leadership development, and building high-performance organizations through D Cube International.
                         </p>
-                        <a href="#" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
-                            Read Article
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <a href="https://www.linkedin.com/posts/mohamed-ramsy-31094921_businessstrategy-dcubeinternational-leadership-activity-7403119879043706880-k-e5" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
+                            Read on LinkedIn
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </article>
 
-                <!-- Article Card 3 -->
+                <!-- Article 3: Risk & Reality -->
                 <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
-                    <div class="aspect-video bg-zinc-900/80 border-b border-white/5 flex items-center justify-center overflow-hidden">
-                        <div class="text-center text-zinc-600">
-                            <i data-lucide="file-text" class="w-10 h-10 mx-auto mb-2 opacity-50"></i>
-                            <p class="text-xs">Article Image</p>
-                        </div>
+                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
+                        <i data-lucide="shield-alert" class="w-12 h-12 text-lime-400/40"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">Case Study</span>
+                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
                         <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
-                            Turnaround in Emerging Markets
+                            The Untold Side of Risk
                         </h3>
                         <p class="text-sm text-zinc-500 leading-relaxed mb-4">
-                            Lessons from restructuring distressed businesses in high-volatility environments.
+                            Understanding risk management beyond traditional frameworks and building antifragile decision-making systems.
                         </p>
-                        <a href="#" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
-                            Read Article
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <a href="https://www.linkedin.com/posts/mohamed-ramsy-31094921_the-untold-side-of-risk-activity-7363900160805883904-uxaQ" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
+                            Read on LinkedIn
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 4: Keynote & Leadership -->
+                <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
+                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
+                        <i data-lucide="users" class="w-12 h-12 text-lime-400/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
+                            Fatherhood, Leadership & Work-Life Balance
+                        </h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed mb-4">
+                            Reflections on leadership principles, personal values, and balancing high-stakes professional work with family commitments.
+                        </p>
+                        <a href="https://www.linkedin.com/posts/mohamed-ramsy-31094921_fatherhood-leadership-worklifebalance-activity-7358381600004349955-ZOtN" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
+                            Read on LinkedIn
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 5: Object-Intelligent Business Models -->
+                <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
+                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
+                        <i data-lucide="brain" class="w-12 h-12 text-lime-400/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
+                            Object-Intelligent Business Models
+                        </h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed mb-4">
+                            Advanced frameworks for designing adaptive business models that respond intelligently to market dynamics and organizational needs.
+                        </p>
+                        <a href="https://www.linkedin.com/posts/mohamed-ramsy-31094921_object-intelligent-business-models-activity-7345408249854050305-v-XH" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
+                            Read on LinkedIn
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 6: Public Sector & Resilience -->
+                <article class="group bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden transition-all">
+                    <div class="aspect-video bg-gradient-to-br from-lime-400/10 to-zinc-900 border-b border-white/5 flex items-center justify-center overflow-hidden">
+                        <i data-lucide="building-2" class="w-12 h-12 text-lime-400/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-lime-400 font-mono uppercase tracking-wider">LinkedIn</span>
+                        <h3 class="text-xl font-medium text-white mt-3 mb-3 group-hover:text-lime-400 transition-colors">
+                            Building Resilient Public Sector Organizations
+                        </h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed mb-4">
+                            Strategic frameworks for future-ready public sector transformation, governance, and institutional resilience building.
+                        </p>
+                        <a href="https://www.linkedin.com/posts/mohamed-ramsy-31094921_building-resilient-and-future-ready-public-activity-7305093477061533698-NFOz" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 hover:text-lime-400 transition-colors flex items-center gap-2">
+                            Read on LinkedIn
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </article>
@@ -1591,7 +1670,7 @@
 
             <div class="mt-16 text-center">
                 <p class="text-sm text-zinc-500">
-                    More articles and insights available on request. Contact for access to full publication archive.
+                    More insights and articles available on <a href="https://www.linkedin.com/in/mohamed-ramsy-31094921/" target="_blank" rel="noopener noreferrer" class="text-lime-400 hover:text-white transition-colors">LinkedIn</a>.
                 </p>
             </div>
         </div>
@@ -1688,6 +1767,23 @@
         </div>
     </section>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-lime-400 transition-colors z-10">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <button onclick="previousImage()" class="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-lime-400 transition-colors z-10">
+            <i data-lucide="chevron-left" class="w-10 h-10"></i>
+        </button>
+        <button onclick="nextImage()" class="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-lime-400 transition-colors z-10">
+            <i data-lucide="chevron-right" class="w-10 h-10"></i>
+        </button>
+        <img id="lightboxImage" src="" alt="" class="max-w-full max-h-full object-contain">
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm font-mono">
+            <span id="lightboxCounter"></span>
+        </div>
+    </div>
+
     <!-- FOOTER: Brutalist -->
     <footer class="bg-zinc-950 border-t border-white/10 pt-16 pb-8 px-6 lg:px-12">
         <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
@@ -1778,6 +1874,165 @@
                 input.style.fontSize = '16px';
             });
         }
+        
+        // ===== DYNAMIC GALLERY SYSTEM =====
+        // Auto-loads all images from /pics folder
+        // NO CODE CHANGES NEEDED when adding/removing images
+        
+        const galleryImages = [
+            '1735061032288.jpeg', '1735061034086.jpeg', 'WhatsApp Image 2025-12-26 at 23.58.00.jpeg',
+            'WhatsApp Image 2025-12-26 at 23.58.01.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.14.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.15.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.16.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.17.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.18.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.20.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.21.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.22.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.24.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.25.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.27.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.28.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.29.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.30.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.32.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.33.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.34.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.35.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.36.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.38.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.39.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.41.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.42.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.02.43.jpeg', 'WhatsApp Image 2025-12-27 at 00.02.55.jpeg',
+            'WhatsApp Image 2025-12-27 at 00.12.03.jpeg', 'WhatsApp Image 2025-12-27 at 00.14.08.jpeg',
+            'dad.jpeg', 'dfgdfg.jpeg', 'dfgdsfdg.jpeg', 'dfgsfsgfs.jpeg', 'dfgzd.jpeg',
+            'dfsdfgafg.jpeg', 'dg.jpeg', 'dgdgd.jpeg', 'dghsfdh.jpeg', 'dgsd.jpeg',
+            'dgsdft.jpeg', 'dgsfg.jpeg', 'dhdghdh.jpeg', 'dhsdfghjfgh.jpeg', 'dtsyytsd.jpeg',
+            'er.jpeg', 'erer.jpeg', 'ergsrgg.jpeg', 'etretre.jpeg', 'fdgsfsgr.jpeg',
+            'fgdg.jpeg', 'fgdgd.jpeg', 'fgdgfd.jpeg', 'fgdsfgsdg.jpeg', 'fgdsgfsfg.jpeg',
+            'fgsgsd.jpeg', 'fsgasgasdfgasd.jpeg', 'gdfsdfg.jpeg', 'gdgf.jpeg', 'gdgfdgsdgf.jpeg',
+            'gdzfg.jpeg', 'gf.jpeg', 'gfdgs.jpeg', 'gfdgz.jpeg', 'gfgdg.jpeg',
+            'gfggag.jpeg', 'ghdfgsdfgds.jpeg', 'ghfjf.jpeg', 'ghs.jpeg', 'ghsghgfhf.jpeg',
+            'ghsgs.jpeg', 'gsfs.jpeg', 'hdgh.jpeg', 'hds.jpeg', 'hfgds.jpeg',
+            'hfhst.jpeg', 'hgfd.jpeg', 'hgshhs.jpeg', 'hjdfhg.jpeg', 'hs.jpeg',
+            'hsfhg.jpeg', 'raet.jpeg', 'reess.jpeg', 'rerte.jpeg', 'reyseryt.jpeg',
+            'rtatt.jpeg', 'rtetset.jpeg', 'rturty.jpeg', 'sf.jpeg', 'sffgsgf.jpeg',
+            'sfgsgsfg.jpeg', 'sgfdgs.jpeg', 'sgfhshsgh.jpeg', 'sghsdgh.jpeg', 'sghsghfs.jpeg',
+            'stys.jpeg', 'terta.jpeg', 'tetrt.jpeg', 'thsytysy.jpeg', 'trwtywe.jpeg',
+            'tyrsr.jpeg', 'tyts.jpeg', 'wetwertwe.jpeg', 'ys.jpeg', 'yteyry.jpeg',
+            'yyd.jpeg', 'zdfg.jpeg'
+        ];
+        
+        let currentImageIndex = 0;
+        
+        // Load gallery on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            loadGallery();
+        });
+        
+        function loadGallery() {
+            const gallery = document.getElementById('gallery');
+            const imageCount = document.getElementById('imageCount');
+            
+            if (!gallery) return;
+            
+            // Shuffle images for visual variety
+            const shuffledImages = [...galleryImages].sort(() => Math.random() - 0.5);
+            
+            shuffledImages.forEach((filename, index) => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'group relative aspect-square bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden cursor-pointer transition-all hover:scale-[1.02]';
+                
+                const img = document.createElement('img');
+                img.src = `pics/${filename}`;
+                img.alt = 'Mohamed Ramsy - Training, Workshop, or Keynote Session';
+                img.className = 'w-full h-full object-cover transition-transform duration-300 group-hover:scale-110';
+                img.loading = 'lazy';
+                
+                // Add click handler for lightbox
+                imgContainer.addEventListener('click', function() {
+                    openLightbox(index, shuffledImages);
+                });
+                
+                // Add overlay on hover
+                const overlay = document.createElement('div');
+                overlay.className = 'absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center';
+                overlay.innerHTML = '<i data-lucide="maximize-2" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>';
+                
+                imgContainer.appendChild(img);
+                imgContainer.appendChild(overlay);
+                gallery.appendChild(imgContainer);
+            });
+            
+            // Update image count
+            if (imageCount) {
+                imageCount.textContent = `${galleryImages.length} Engagements Documented`;
+            }
+            
+            // Reinitialize Lucide icons for new elements
+            lucide.createIcons();
+        }
+        
+        // ===== LIGHTBOX FUNCTIONALITY =====
+        let lightboxImages = [];
+        
+        function openLightbox(index, images) {
+            currentImageIndex = index;
+            lightboxImages = images;
+            
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            
+            if (lightbox && lightboxImage) {
+                lightboxImage.src = `pics/${images[index]}`;
+                lightboxCounter.textContent = `${index + 1} / ${images.length}`;
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                
+                // Reinitialize icons
+                lucide.createIcons();
+            }
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % lightboxImages.length;
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            
+            if (lightboxImage) {
+                lightboxImage.src = `pics/${lightboxImages[currentImageIndex]}`;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${lightboxImages.length}`;
+            }
+        }
+        
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length;
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            
+            if (lightboxImage) {
+                lightboxImage.src = `pics/${lightboxImages[currentImageIndex]}`;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${lightboxImages.length}`;
+            }
+        }
+        
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox && !lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') previousImage();
+            }
+        });
+        
+        // Close lightbox on background click
+        document.getElementById('lightbox')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
     </script>
 
 </body></html>
