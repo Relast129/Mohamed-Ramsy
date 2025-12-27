@@ -233,6 +233,135 @@
         .mobile-menu a:hover {
             color: #a3e635;
         }
+        
+        /* ========================================
+           CREATIVE IMAGE FRAMES - PREMIUM STYLING
+           Applied to all images across the website
+           ======================================== */
+        
+        /* Premium Image Frame - Hero & Featured Images */
+        .premium-frame {
+            position: relative;
+            padding: 8px;
+            background: linear-gradient(135deg, #a3e635 0%, #84cc16 50%, #65a30d 100%);
+            border-radius: 12px;
+            box-shadow: 
+                0 10px 40px rgba(163, 230, 53, 0.15),
+                0 0 0 1px rgba(163, 230, 53, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .premium-frame:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 20px 60px rgba(163, 230, 53, 0.25),
+                0 0 0 1px rgba(163, 230, 53, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+        
+        .premium-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        .premium-frame img {
+            border-radius: 8px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Gallery Image Frame - Dynamic & Elegant */
+        .gallery-frame {
+            position: relative;
+            padding: 6px;
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.8), rgba(132, 204, 22, 0.6));
+            border-radius: 8px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(163, 230, 53, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-frame:hover {
+            padding: 8px;
+            background: linear-gradient(135deg, rgba(163, 230, 53, 1), rgba(132, 204, 22, 0.8));
+            box-shadow: 
+                0 12px 48px rgba(163, 230, 53, 0.3),
+                0 0 0 2px rgba(163, 230, 53, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        .gallery-frame::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border-radius: 6px;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-frame:hover::after {
+            opacity: 1;
+        }
+        
+        /* Double Border Frame - Sophisticated */
+        .double-frame {
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(135deg, #18181b, #27272a);
+            border-radius: 10px;
+            box-shadow: 
+                0 0 0 2px rgba(163, 230, 53, 0.3),
+                0 0 0 4px rgba(24, 24, 27, 1),
+                0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .double-frame::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.4), rgba(132, 204, 22, 0.2));
+            z-index: -1;
+            filter: blur(8px);
+        }
+        
+        /* Neon Glow Frame - Eye-Catching */
+        .neon-frame {
+            position: relative;
+            padding: 6px;
+            background: #18181b;
+            border-radius: 10px;
+            box-shadow: 
+                0 0 20px rgba(163, 230, 53, 0.4),
+                0 0 40px rgba(163, 230, 53, 0.2),
+                inset 0 0 20px rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.5);
+            transition: all 0.4s ease;
+        }
+        
+        .neon-frame:hover {
+            box-shadow: 
+                0 0 30px rgba(163, 230, 53, 0.6),
+                0 0 60px rgba(163, 230, 53, 0.3),
+                inset 0 0 30px rgba(163, 230, 53, 0.15);
+            border-color: rgba(163, 230, 53, 0.8);
+        }
 
         /* ========================================
            COMPLETE MOBILE REDESIGN - ADVANCED UI
@@ -977,8 +1106,8 @@
             
             <!-- Professional Photo -->
             <div class="lg:col-span-3 hidden lg:block">
-                <div class="aspect-square bg-zinc-900/50 border border-white/5 rounded-sm overflow-hidden">
-                    <img src="hero_pic.jpeg" alt="Mohamed Ramsy" class="w-full h-full object-cover">
+                <div class="premium-frame aspect-square">
+                    <img src="hero_pic.jpeg" alt="Mohamed Ramsy">
                 </div>
             </div>
             
@@ -1306,8 +1435,8 @@
                     </div>
 
                     <!-- Workshop / Lecture Image -->
-                    <div class="bg-zinc-900/50 border border-white/5 rounded-sm overflow-hidden aspect-video">
-                        <img src="reess.jpeg" alt="Mohamed Ramsy - Workshop & Training Session" class="w-full h-full object-cover">
+                    <div class="double-frame aspect-video">
+                        <img src="reess.jpeg" alt="Mohamed Ramsy - Workshop & Training Session" class="w-full h-full object-cover rounded-sm">
                     </div>
                 </div>
 
@@ -2080,17 +2209,22 @@
             // Determine how many images to show
             const imagesToShow = galleryExpanded ? shuffledImages.length : getInitialImageCount();
             
-            // Create image elements
+            // Create image elements with creative frames
             shuffledImages.slice(0, imagesToShow).forEach((filename, index) => {
-                const imgContainer = document.createElement('div');
-                imgContainer.className = 'gallery-item group relative bg-zinc-900/50 border border-white/5 hover:border-lime-400/30 rounded-sm overflow-hidden cursor-pointer transition-all hover:scale-[1.02] opacity-0';
-                imgContainer.style.aspectRatio = '1';
+                // Create outer container with frame
+                const frameContainer = document.createElement('div');
+                frameContainer.className = 'gallery-frame opacity-0';
+                frameContainer.style.aspectRatio = '1';
                 
                 // Staggered fade-in animation
                 setTimeout(() => {
-                    imgContainer.style.transition = 'opacity 0.5s ease, transform 0.3s ease';
-                    imgContainer.style.opacity = '1';
+                    frameContainer.style.transition = 'opacity 0.5s ease';
+                    frameContainer.style.opacity = '1';
                 }, index * 50);
+                
+                // Create inner container for image and overlay
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'gallery-item group relative w-full h-full rounded-sm overflow-hidden cursor-pointer';
                 
                 const img = document.createElement('img');
                 img.src = `pics/${filename}`;
@@ -2110,7 +2244,8 @@
                 
                 imgContainer.appendChild(img);
                 imgContainer.appendChild(overlay);
-                gallery.appendChild(imgContainer);
+                frameContainer.appendChild(imgContainer);
+                gallery.appendChild(frameContainer);
             });
             
             // Update image count
